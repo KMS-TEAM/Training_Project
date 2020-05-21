@@ -33,5 +33,5 @@ void MainWindow::on_actionQuit_triggered()
 
 void MainWindow::on_pushButton_clicked()
 {
-    QMessageBox::information(this, "Thang ngao: ", ui->comboBox->currentText());
+    QMessageBox::information(this, "Thang ngao: ", QString::number(ui->comboBox->currentIndex()));
 }
