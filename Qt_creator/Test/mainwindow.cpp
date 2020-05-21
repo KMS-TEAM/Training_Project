@@ -6,6 +6,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->comboBox->addItem(QIcon(":/rec/image/open-file-icon-2.png"), "King");
+    ui->comboBox->addItem(QIcon(":/rec/image/open-file-icon-2.png"), "Queen");
+    ui->comboBox->addItem(QIcon(":/rec/image/open-file-icon-2.png"), "Prince");
 }
 
 MainWindow::~MainWindow()
