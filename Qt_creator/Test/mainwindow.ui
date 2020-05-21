@@ -17,11 +17,24 @@
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>30</y>
+      <x>70</x>
+      <y>40</y>
       <width>201</width>
       <height>51</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>120</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Name</string>
     </property>
    </widget>
   </widget>

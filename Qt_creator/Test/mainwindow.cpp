@@ -30,3 +30,8 @@ void MainWindow::on_actionQuit_triggered()
 {
     QApplication::quit();
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    QMessageBox::information(this, "Thang ngao: ", ui->comboBox->currentText());
+}
