@@ -36,7 +36,7 @@ void MainWindow::on_actionOpen_triggered()
     QTextStream in(&file);
     QString text = in.readAll();
     ui->textEdit->setText(text);
-    file.close;
+    file.close();
 }
 
 void MainWindow::on_actionSave_triggered()
