@@ -97,5 +97,8 @@ void MainWindow::on_actionRedo_triggered()
 
 void MainWindow::on_actionAbout_NotePad_triggered()
 {
-
+    QString about_text;
+    about_text = "Lacie \n";
+    about_text += "Life Zero";
+    QMessageBox::about(this,"About Notepad", about_text);
 }
