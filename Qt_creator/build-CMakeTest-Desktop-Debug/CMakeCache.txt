@@ -193,6 +193,12 @@ CMakeTest_BINARY_DIR:STATIC=/home/life/Git/o_team_project/Qt_creator/build-CMake
 //Value Computed by CMake
 CMakeTest_SOURCE_DIR:STATIC=/home/life/Git/o_team_project/Qt_creator/CMakeTest
 
+//The directory containing a CMake configuration file for Mosquitto.
+Mosquitto_DIR:PATH=Mosquitto_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for Mosquittopp.
+Mosquittopp_DIR:PATH=Mosquittopp_DIR-NOTFOUND
+
 //Path to a program.
 ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf
 
