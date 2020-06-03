@@ -5,7 +5,7 @@
 		<Option title="CMakeTest"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug"/>
@@ -116,10 +116,22 @@
 		<Unit filename="/home/life/Git/o_team_project/Qt_creator/CMakeTest/mainwindow.ui">
 			<Option target="CMakeTest"/>
 		</Unit>
+		<Unit filename="/home/life/Git/o_team_project/Qt_creator/CMakeTest/mqttconnection.cpp">
+			<Option target="CMakeTest"/>
+		</Unit>
+		<Unit filename="/home/life/Git/o_team_project/Qt_creator/CMakeTest/mqttconnection.h">
+			<Option target="CMakeTest"/>
+		</Unit>
 		<Unit filename="/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug/moc_mainwindow.cpp">
 			<Option target="CMakeTest"/>
 		</Unit>
 		<Unit filename="/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug/moc_mainwindow.cpp.rule">
+			<Option target="CMakeTest"/>
+		</Unit>
+		<Unit filename="/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug/moc_mqttconnection.cpp">
+			<Option target="CMakeTest"/>
+		</Unit>
+		<Unit filename="/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug/moc_mqttconnection.cpp.rule">
 			<Option target="CMakeTest"/>
 		</Unit>
 		<Unit filename="/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug/ui_mainwindow.h">
@@ -172,6 +184,12 @@
 		</Unit>
 		<Unit filename="/home/life/Git/o_team_project/Qt_creator/CMakeTest/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/life/Git/o_team_project/Qt_creator/CMakeTest/cmake/FindMosquitto.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/life/Git/o_team_project/Qt_creator/CMakeTest/cmake/FindMosquittopp.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

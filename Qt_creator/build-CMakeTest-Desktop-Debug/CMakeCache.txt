@@ -193,6 +193,18 @@ CMakeTest_BINARY_DIR:STATIC=/home/life/Git/o_team_project/Qt_creator/build-CMake
 //Value Computed by CMake
 CMakeTest_SOURCE_DIR:STATIC=/home/life/Git/o_team_project/Qt_creator/CMakeTest
 
+//Path to a file.
+MOSQUITTOPP_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+MOSQUITTOPP_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libmosquittopp.so
+
+//Path to a file.
+MOSQUITTO_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+MOSQUITTO_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libmosquitto.so
+
 //The directory containing a CMake configuration file for Mosquitto.
 Mosquitto_DIR:PATH=Mosquitto_DIR-NOTFOUND
 
@@ -366,6 +378,18 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding MOSQUITTO
+FIND_PACKAGE_MESSAGE_DETAILS_MOSQUITTO:INTERNAL=[/usr/lib/x86_64-linux-gnu/libmosquitto.so][/usr/include][v()]
+//Details about finding MOSQUITTOPP
+FIND_PACKAGE_MESSAGE_DETAILS_MOSQUITTOPP:INTERNAL=[/usr/lib/x86_64-linux-gnu/libmosquittopp.so][/usr/include][v()]
+//ADVANCED property for variable: MOSQUITTOPP_INCLUDE_DIR
+MOSQUITTOPP_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MOSQUITTOPP_LIBRARY
+MOSQUITTOPP_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MOSQUITTO_INCLUDE_DIR
+MOSQUITTO_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MOSQUITTO_LIBRARY
+MOSQUITTO_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_getconf
 ProcessorCount_cmd_getconf-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl

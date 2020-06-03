@@ -1,0 +1,5 @@
+-I/home/life/Git/o_team_project/Qt_creator/CMakeTest
+-I/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug
+-o
+/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug/moc_mqttconnection.cpp
+/home/life/Git/o_team_project/Qt_creator/CMakeTest/mqttconnection.h

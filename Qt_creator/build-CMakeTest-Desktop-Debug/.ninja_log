@@ -11,3 +11,9 @@
 9	1460	1591194915	CMakeFiles/CMakeTest.dir/main.cpp.o	a78fcb835523e1ca
 9	1620	1591194915	CMakeFiles/CMakeTest.dir/mainwindow.cpp.o	3bc11627f504f884
 1621	1996	1591194916	CMakeTest	928508326e7b3573
+1	4	1591198095	moc_mqttconnection.cpp	ad1736567a02bf9d
+4	19	1591198095	CMakeFiles/CMakeTest.dir/moc_mqttconnection.cpp.o	6f497d978d8fdb52
+2	5	1591198767	moc_mqttconnection.cpp	ad1736567a02bf9d
+5	21	1591198767	CMakeFiles/CMakeTest.dir/moc_mqttconnection.cpp.o	6f497d978d8fdb52
+1	258	1591198794	CMakeFiles/CMakeTest.dir/mqttconnection.cpp.o	9f19ebd52cd8097b
+1	430	1591199067	CMakeTest	cd7e4f4ea938899f

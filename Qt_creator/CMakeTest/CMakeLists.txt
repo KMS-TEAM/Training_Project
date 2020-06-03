@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.8)
 
 project(CMakeTest)
 
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
+
 # find QT5 and required components
 find_package(Qt5 COMPONENTS REQUIRED Core Gui Widgets)
 find_package(Mosquitto)
@@ -11,8 +13,8 @@ find_package(Mosquitto)
 # file from the qt5_wrap_ui call below.
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-set(project_sources mainwindow.cpp main.cpp)
-set(project_headers mainwindow.h)
+set(project_sources mainwindow.cpp main.cpp mqttconnection.cpp)
+set(project_headers mainwindow.h mqttconnection.h)
 set(project_ui mainwindow.ui)
 
 # wrap the ui file to a c++ header
@@ -41,5 +43,7 @@ target_link_libraries(CMakeTest
         Qt5::Core
         Qt5::Gui
         Qt5::Widgets)
+
+target_link_libraries(CMakeTest ${MOSQUITTOPP_LIBRARIES})
 
 
