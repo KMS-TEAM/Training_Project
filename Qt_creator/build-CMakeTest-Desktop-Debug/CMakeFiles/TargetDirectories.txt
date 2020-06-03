@@ -1,0 +1,3 @@
+/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug/CMakeFiles/CMakeTest.dir
+/home/life/Git/o_team_project/Qt_creator/build-CMakeTest-Desktop-Debug/CMakeFiles/edit_cache.dir

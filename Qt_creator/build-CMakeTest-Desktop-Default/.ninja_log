@@ -1,0 +1,7 @@
+# ninja log v5
+0	9	1591194777	ui_mainwindow.h	694b4fea7f073da5
+1	59	1591194777	moc_mainwindow.cpp	85302df4b5a2489a
+60	1256	1591194778	CMakeFiles/CMakeTest.dir/mainwindow.cpp.o	f0d2443a615b2339
+61	1273	1591194778	CMakeFiles/CMakeTest.dir/moc_mainwindow.cpp.o	65fdd6e0168d0cf2
+60	1349	1591194778	CMakeFiles/CMakeTest.dir/main.cpp.o	321e28f159230ac
+1349	1894	1591194779	CMakeTest	a0b802ef069321cc
