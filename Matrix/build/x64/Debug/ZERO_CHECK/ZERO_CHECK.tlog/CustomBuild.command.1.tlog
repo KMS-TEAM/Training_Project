@@ -1,0 +1,10 @@
+^E:\GIT\O_TEAM_PROJECT\QT_CREATOR\MATRIX\BUILD\CMAKEFILES\45261FC98C1224249C02705467915276\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/Git/o_team_project/Qt_creator/Matrix -BE:/Git/o_team_project/Qt_creator/Matrix/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/Git/o_team_project/Qt_creator/Matrix/build/Matrix.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
