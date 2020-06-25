@@ -1,0 +1,19 @@
+# ninja log v5
+0	5	1591194818	moc_mainwindow.cpp	a0c489c7170fd880
+0	11	1591194818	ui_mainwindow.h	d957baf0e0a0020c
+12	960	1591194819	CMakeFiles/CMakeTest.dir/moc_mainwindow.cpp.o	b671d5bcfe228f3f
+12	1422	1591194819	CMakeFiles/CMakeTest.dir/main.cpp.o	a78fcb835523e1ca
+11	1575	1591194820	CMakeFiles/CMakeTest.dir/mainwindow.cpp.o	3bc11627f504f884
+1576	1951	1591194820	CMakeTest	928508326e7b3573
+2	5	1591194914	moc_mainwindow.cpp	a0c489c7170fd880
+1	9	1591194914	ui_mainwindow.h	d957baf0e0a0020c
+10	1147	1591194915	CMakeFiles/CMakeTest.dir/moc_mainwindow.cpp.o	b671d5bcfe228f3f
+9	1460	1591194915	CMakeFiles/CMakeTest.dir/main.cpp.o	a78fcb835523e1ca
+9	1620	1591194915	CMakeFiles/CMakeTest.dir/mainwindow.cpp.o	3bc11627f504f884
+1621	1996	1591194916	CMakeTest	928508326e7b3573
+1	4	1591198095	moc_mqttconnection.cpp	ad1736567a02bf9d
+4	19	1591198095	CMakeFiles/CMakeTest.dir/moc_mqttconnection.cpp.o	6f497d978d8fdb52
+2	5	1591198767	moc_mqttconnection.cpp	ad1736567a02bf9d
+5	21	1591198767	CMakeFiles/CMakeTest.dir/moc_mqttconnection.cpp.o	6f497d978d8fdb52
+1	258	1591198794	CMakeFiles/CMakeTest.dir/mqttconnection.cpp.o	9f19ebd52cd8097b
+1	430	1591199067	CMakeTest	cd7e4f4ea938899f
