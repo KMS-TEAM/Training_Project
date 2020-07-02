@@ -13,8 +13,3 @@ def on_button_clicked():
 button.clicked.connect(on_button_clicked)
 button.show()
 app.exec_()
-
-
-
-
-
