@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
 class Ui_Test(object):
     def setupUi(self, Test):
@@ -19,8 +20,15 @@ class Ui_Test(object):
         self.retranslateUi(Test)
         QtCore.QMetaObject.connectSlotsByName(Test)
 
+        self.pushButton.clicked.connect(self.printMessage)
+
     def retranslateUi(self, Test):
         _translate = QtCore.QCoreApplication.translate
         Test.setWindowTitle(_translate("Test", "Test"))
         self.pushButton.setText(_translate("Test", "Click Here"))
+    
+    def printMessage(self):
+        alert = QMessageBox()
+        alert.setText('Hello World')
+        alert.exec_()
 
