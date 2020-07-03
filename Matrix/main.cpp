@@ -4,7 +4,6 @@
 std::vector<std::vector<int>> drawMatrix(int level, int &number) {
 
     if (level == 1) {
- //       std::cout << "??????????" << std::endl;
         std::vector<std::vector<int>> matrix(level, std::vector<int>(level, 0));
         matrix.at(0).at(0) = 1;
         number = 1;
@@ -39,7 +38,6 @@ std::vector<std::vector<int>> drawMatrix(int level, int &number) {
     }
 
     new_matrix.at(1).at(level - 1) = new_number + 1;
-    std::cout << "new_number: " << new_number << std::endl;
 
     for (int i = 2; i < level; i++) {
         new_matrix.at(i).at(level - 1) = new_matrix.at(i - 1).at(level - 1)+1;

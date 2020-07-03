@@ -1,15 +1,17 @@
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPalette
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QMessageBox
-app = QApplication([])
-app.setStyle('Fusion')
-button = QPushButton('Click')
+import sys
 
-def on_button_clicked():
-    alert = QMessageBox()
-    alert.setText('You clicked the button!')
-    alert.exec_()
+from PyQt5 import QtCore, QtGui, QtWidgets
+from MainWindow import Ui_MainWindow
 
-button.clicked.connect(on_button_clicked)
-button.show()
-app.exec_()
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
+
+
+
+
