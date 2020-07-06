@@ -43,3 +43,4 @@ class Ui_ToolBox(object):
         self.toolBox.setItemText(self.toolBox.indexOf(self.page), _translate("ToolBox", "C++"))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_2), _translate("ToolBox", "Python"))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_3), _translate("ToolBox", "Java"))
+
