@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from ToolBarExample import Ui_MainWindow
+from TextEdit import Ui_MainWindow
 from PyQt5.QtGui import QIcon
 
 if __name__ == "__main__":

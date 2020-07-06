@@ -9,8 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow,  QAction, QTextEdit
-from PyQt5.QtGui import QIcon
+import paho.mqtt.client as mqtt
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -18,53 +18,86 @@ class Ui_MainWindow(object):
         MainWindow.resize(835, 590)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setGeometry(QtCore.QRect(200, 30, 361, 41))
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_2.setGeometry(QtCore.QRect(200, 100, 161, 31))
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(70, 110, 81, 21))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(60, 30, 81, 31))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(630, 30, 121, 41))
+        self.pushButton.setObjectName("pushButton")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(70, 170, 471, 61))
+        font = QtGui.QFont()
+        font.setPointSize(15)
+        self.label_3.setFont(font)
+        self.label_3.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_3.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.label_3.setTextFormat(QtCore.Qt.AutoText)
+        self.label_3.setObjectName("label_3")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 835, 21))
-        self.fileMenu = self.menubar.addMenu('File')
-        self.editMenu = self.menubar.addMenu('Edit')
-        self.viewMenu = self.menubar.addMenu('View')
-        self.helpMenu = self.menubar.addMenu('Help')
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
-        self.copyAction = QAction(QIcon("Resources/copy.png"), 'Copy')
-        self.copyAction.setShortcut("Ctrl+C")
-        self.fileMenu.addAction(self.copyAction)
-        self.saveAction = QAction(QIcon("Resources/save.png"), 'Save')
-        self.saveAction.setShortcut("Ctrl+S")
-        self.fileMenu.addAction(self.saveAction)
-        self.pasteAction = QAction(QIcon("Resources/paste.jpg"), 'Paste')
-        self.pasteAction.setShortcut("Ctrl+P")
-        self.fileMenu.addAction(self.pasteAction)
-        self.exiteAction = QAction(QIcon("Resources/new.jpg"), 'Exit')
-        self.exiteAction.setShortcut("Ctrl+E")
-        self.exiteAction.triggered.connect(self.exitWindow)
-        self.fileMenu.addAction(self.exiteAction)
-        self.toolbar = QtWidgets.QToolBar(MainWindow)
-        self.toolbar.addAction(self.copyAction)
-        self.toolbar.addAction(self.saveAction)
-        self.toolbar.addAction(self.pasteAction)
-        self.toolbar.addAction(self.exiteAction)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
-
-
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+        self.pushButton.clicked.connect(self.mqttConnect)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.fileMenu.setWindowTitle(_translate("MainWindow", "File"))
-        self.editMenu.setWindowTitle(_translate("MainWindow", "Edit"))
-        self.helpMenu.setWindowTitle(_translate("MainWindow", "Help"))
-        self.viewMenu.setWindowTitle(_translate("MainWindow", "View"))
+        self.label.setText(_translate("MainWindow", "Port"))
+        self.label_2.setText(_translate("MainWindow", "Host"))
+        self.pushButton.setText(_translate("MainWindow", "Connect"))
+        self.label_3.setText(_translate("MainWindow", "Data"))
 
-    def exitWindow(self):
-        self.close()
+    def on_connect(mqttc, rc):
+        print("rc: " + str(rc))
 
-    def createEditor(self):
-        self.textEdit = QTextEdit(self)
-        self.setCentralWidget(self.textEdit)
+    def on_message(mqttc,msg, self):
+        print(msg.topic + ": " + str(msg.payload))
+        self.label_3.setText(msg.topic + ": " + str(msg.payload))
+
+    def on_publish(mqttc,mid):
+        print("mid: " + str(mid))
+
+    def on_subscribe(mqttc,mid, granted_qos):
+        print("Subscribed: " + str(mid) + " " + str(granted_qos))
+
+    def on_log(mqttc, string):
+        print(string)
+
+    def mqttConnect(self):
+        mqttc = mqtt.Client()
+        mqttc.on_message = self.on_message
+        mqttc.on_connect = self.on_connect
+        mqttc.on_publish = self.on_publish
+        mqttc.on_subscribe = self.on_subscribe
+        # Uncomment to enable debug messages
+        # mqttc.on_log = on_log
+        self.host = self.lineEdit.text()
+        self.port = self.lineEdit_2.text()
+        mqttc.connect(self.host, self.port, 60)
+        mqttc.subscribe("/topic", qos=0)
+        mqttc.loop_forever()
+
+
