@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "mqttconnection.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,6 +21,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    class mqttConnection *connect;
+    int rc;
 };
 
 #endif // MAINWINDOW_H

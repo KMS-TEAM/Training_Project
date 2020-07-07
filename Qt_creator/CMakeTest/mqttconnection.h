@@ -10,7 +10,7 @@ public:
     mqttConnection(const char *id, const char *host, int port);
     ~mqttConnection();
 
-    std::string topicName = "test";
+    std::string topicName = "test/demo";
 
     void on_connect(int rc);
     void on_message(const struct mosquitto_message *message);

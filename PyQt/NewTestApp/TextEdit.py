@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import paho.mqtt.client as mqtt
+import time
+import paho.mqtt.subscribe as subscribe
 
 
 class Ui_MainWindow(object):
@@ -70,34 +72,16 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "Connect"))
         self.label_3.setText(_translate("MainWindow", "Data"))
 
-    def on_connect(mqttc, rc):
-        print("rc: " + str(rc))
+    def print_msg(self, client, userdata, message):
+        print("%s : %s" % (message.topic, message.payload))
+        self.label_3.setText(str(message.topic) + str(message.payload))
 
-    def on_message(mqttc,msg, self):
-        print(msg.topic + ": " + str(msg.payload))
-        self.label_3.setText(msg.topic + ": " + str(msg.payload))
 
-    def on_publish(mqttc,mid):
-        print("mid: " + str(mid))
-
-    def on_subscribe(mqttc,mid, granted_qos):
-        print("Subscribed: " + str(mid) + " " + str(granted_qos))
-
-    def on_log(mqttc, string):
-        print(string)
 
     def mqttConnect(self):
-        mqttc = mqtt.Client()
-        mqttc.on_message = self.on_message
-        mqttc.on_connect = self.on_connect
-        mqttc.on_publish = self.on_publish
-        mqttc.on_subscribe = self.on_subscribe
-        # Uncomment to enable debug messages
-        # mqttc.on_log = on_log
         self.host = self.lineEdit.text()
         self.port = self.lineEdit_2.text()
-        mqttc.connect(self.host, self.port, 60)
-        mqttc.subscribe("/topic", qos=0)
-        mqttc.loop_forever()
+        subscribe.callback(self.print_msg, "demo/test", hostname=self.host)
+
 
 
