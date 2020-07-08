@@ -11,23 +11,10 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 
-import paho.mqtt.client as mqtt
-import paho.mqtt.subscribe as subscribe
-import time
-
-class Connect(QThread):
-    hostname_ = ''
-    message = pyqtSignal(str)
-    def callback(self):
-        subscribe.callback(self.print_msg, "demo/test", hostname=self.hostname_)
-
-    def print_msg(self,client, userdata, message):
-        self.message = message
-        print("%s : %s" % (message.topic, message.payload))
-
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        self.host = ''
+        self.port = ''
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(835, 590)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -84,18 +71,9 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "Connect"))
         self.label_3.setText(_translate("MainWindow", "Data"))
 
-    def print_msg(self, message):
-        print("%s : %s" % (message.topic, message.payload))
-        self.label_3.setText(str(message.topic) + str(message.payload))
-
     def mqttConnect(self):
-        self.thread = Connect()
-        self.thread.hostname_ = self.lineEdit.text()
-        print("???????")
-        self.thread.callback()
-        self.thread.message.connect(self.print_msg)
-        self.thread.start()
-
+        self.host = self.label.text()
+        self.port = self.label_2.text()
 
 
 
