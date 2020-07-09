@@ -11,6 +11,8 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import pyqtSignal as Signal, pyqtSlot as Slot
 
 import paho.mqtt.client as mqtt
+import pymongo
+from pymongo import MongoClient
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -19,6 +21,7 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         self.setupGUI_Iots()
+        self.setupMongodb()
 
     def setupGUI_Iots(self):
         self.mqttc = mqtt.Client()
@@ -34,11 +37,18 @@ class MainWindow(QMainWindow):
         self.timer_alarm.setInterval(3000)
         self.timer_alarm.start()
 
+    def setupMongodb(self):
+        self.client = MongoClient('localhost', 27017)
+        self.db = self.client.test_database
+        self.collection = self.db.test_collection
+
     def on_iot_message(self, mqttc, obj, msg):
         print('Update IoTs ...')
         something = msg.payload
         print(something)
         self.ui.label_3.setText(str(something))
+        self.data = something
+        self.result = self.db.test_collection.insert_one(self.data)
 
     def on_iot_publish(self, mqttc, obj, mid):
         # print("pub: " + str(mid) + " - mess = " + str(obj))
