@@ -33,6 +33,10 @@ class MainWindow(QMainWindow):
         self.mqttc.subscribe("demo/test", qos=0)
         self.mqttc.loop_start()
 
+        self.ui.label.setText("Host :" + "127.0.0.1")
+        self.ui.label_2.setText("Port :" + "1883")
+        self.ui.label_3.setText("Topic :" + "demo/test")
+
         self.timer_alarm = QTimer(self)
         self.timer_alarm.timeout.connect(self.print)
         self.timer_alarm.setInterval(3000)
@@ -47,7 +51,7 @@ class MainWindow(QMainWindow):
         print('Update IoTs ...')
         something = msg.payload
         print(something)
-        self.ui.label_3.setText(str(something))
+        self.ui.textBrowser.setText(something)
         self.data = something
         self.result = self.db.test_collection.insert_one(self.data)
 
