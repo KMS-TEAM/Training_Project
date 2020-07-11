@@ -52,8 +52,7 @@ class MainWindow(QMainWindow):
         something = msg.payload
         print(something)
         self.ui.label_4.setText("Message : " + str(something))
-        self.data = str(something)
-        str = {"data" : something}
+        str = {"data" : str(something)}
         self.result = self.db.test_collection.insert_one(str)
 
     def on_iot_publish(self, mqttc, obj, mid):
