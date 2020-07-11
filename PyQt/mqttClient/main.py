@@ -51,7 +51,7 @@ class MainWindow(QMainWindow):
         print('Update IoTs ...')
         something = msg.payload
         print(something)
-        self.ui.textBrowser.setText(something)
+        self.ui.label_4.setText("Message : " + " " + str(something))
         self.data = something
         self.result = self.db.test_collection.insert_one(self.data)
 
