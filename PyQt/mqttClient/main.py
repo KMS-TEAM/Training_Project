@@ -52,10 +52,12 @@ class MainWindow(QMainWindow):
 
     def on_iot_message(self, mqttc, obj, msg):
         print('Update IoTs ...')
-        something = msg.payload
-        print(something)
-        self.ui.label_4.setText("Message : " + str(something))
-        data = {"data" : str(something)}
+        self.data = msg.payload
+        print(self.data)
+        self.ui.label_4.setText("Message : " + str(self.data))
+        self.convertdata()
+        data = {"data" : str(self.data)}
+        print(data)
         self.result = self.collection.insert_one(data)
 
     def on_iot_publish(self, mqttc, obj, mid):
@@ -65,6 +67,8 @@ class MainWindow(QMainWindow):
     def print(self):
         print("something")
 
+    def convertdata(self):
+        temp = self.data
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
