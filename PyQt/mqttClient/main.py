@@ -44,6 +44,7 @@ class MainWindow(QMainWindow):
 
     def setupMongodb(self):
         self.client = MongoClient('localhost', 27017)
+        
         self.db = self.client["mydatabase"]
         self.collection = self.db["customers"]
 
@@ -52,8 +53,8 @@ class MainWindow(QMainWindow):
         something = msg.payload
         print(something)
         self.ui.label_4.setText("Message : " + str(something))
-        str = {"data" : str(something)}
-        self.result = self.db.test_collection.insert_one(str)
+    #    str = {"data" : str(something)}
+    #    self.result = self.db.test_collection.insert_one(str)
 
     def on_iot_publish(self, mqttc, obj, mid):
         # print("pub: " + str(mid) + " - mess = " + str(obj))
