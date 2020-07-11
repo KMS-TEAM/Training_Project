@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
 
     def setupMongodb(self):
         self.client = MongoClient('localhost', 27017)
-        self.db = self.client.test_database
+        self.db = self.client["mydatabase"]
         self.collection = self.db.test_collection
 
     def on_iot_message(self, mqttc, obj, msg):
