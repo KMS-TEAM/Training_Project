@@ -1,4 +1,5 @@
 import sys
+import time
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from ui_mainwindow import Ui_mqttClient
@@ -65,7 +66,8 @@ class MainWindow(QMainWindow):
             "RainfallOneHour" : self.rainFallOneHour,
             "RainfallOneDay" : self.rainFallOneDay,
             "Humidity" : self.humidity,
-            "BarPressure" : self.barPressure
+            "BarPressure" : self.barPressure,
+            "Time" : time.ctime()
         }
 #        print(data)
         self.result = self.collection.insert_one(data)
@@ -140,6 +142,7 @@ class MainWindow(QMainWindow):
         self.ui.RainfallOneDay.setText(("Rain fall One Day: " + str(self.rainFallOneDay)))
         self.ui.Humidity.setText(("Humidity: " + str(self.humidity)))
         self.ui.BarPressure.setText(("Bar Pressure: " + str(self.barPressure)))
+        self.ui.Time.setText(("Time: " + time.ctime()))
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
