@@ -56,7 +56,7 @@ class MainWindow(QMainWindow):
         print(self.data)
         self.ui.label_4.setText("Message : " + str(self.data))
         self.convertdata()
-        data = {"data" : str(self.data)}
+        data = {"data": str(self.data)}
         print(data)
         self.result = self.collection.insert_one(data)
 
@@ -68,7 +68,21 @@ class MainWindow(QMainWindow):
         print("something")
 
     def convertdata(self):
-        temp = self.data
+        temp = str(self.data)
+        print("convert data function")
+        self.id = ''
+        self.sensorData = ''
+
+        for i in range(temp.find('<')+1, temp.find('>')):
+        #    print(temp[i])
+            self.id = self.id + temp[i]
+        for i in range(temp.find('>')+1, temp.find('*')):
+            self.sensorData = self.sensorData + temp[i]
+
+        print(self.id)
+        print(self.sensorData)
+
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
