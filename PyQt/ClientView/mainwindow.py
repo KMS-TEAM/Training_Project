@@ -99,37 +99,37 @@ class MainWindow(QMainWindow):
     #    print(WindDirection)
 
         WindSpeedAverage = ''
-        for i in range(5,8):
+        for i in range(5, 8):
             WindSpeedAverage = WindSpeedAverage + self.sensorData[i]
         self.windSpeedAverage = 0.44704*(int(WindSpeedAverage))
 
         WindSpeedMax = ''
-        for i in range(9,12):
+        for i in range(9, 12):
             WindSpeedMax = WindSpeedMax + self.sensorData[i]
         self.windSpeedMax = 0.44704*(int(WindSpeedMax))
 
         Temperature = ''
-        for i in range(13,16):
+        for i in range(13, 16):
             Temperature = Temperature +self.sensorData[i]
         self.temperature = (int(Temperature)-32.00)*5.00/9.00
 
         RainfallOneHour = ''
-        for i in range(17,20):
+        for i in range(17, 20):
             RainfallOneHour = RainfallOneHour + self.sensorData[i]
         self.rainFallOneHour = (int(RainfallOneHour))*25.40*0.01
 
         RainfallOneDay = ''
-        for i in range(21,24):
+        for i in range(21, 24):
             RainfallOneDay = RainfallOneDay + self.sensorData[i]
         self.rainFallOneDay = (int(RainfallOneDay))*25.04*0.01
 
         Humidity = ''
-        for i in range(25,27):
+        for i in range(25, 27):
             Humidity = Humidity + self.sensorData[i]
         self.humidity = int(Humidity)
 
         BarPressure = ''
-        for i in range(28,33):
+        for i in range(28, 33):
             BarPressure = BarPressure + self.sensorData[i]
         self.barPressure = int(BarPressure) / 10.00
 
