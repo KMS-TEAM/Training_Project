@@ -20,7 +20,6 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.setupMongodb()
         self.ui.countButton.clicked.connect(self.count)
 
     def setupMongodb(self):
@@ -28,7 +27,12 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def count(self):
-        self.db = self.client[self.ui.database_name.text()]
-        self.collection = self.db[self.ui.collection_name.text()]
-        print(self.collection.count())
-        self.ui.outputEdit.setText(str(self.collection.count()))
+        self.setupMongodb()
+        database = self.ui.databaseEdit.text()
+        collection = self.ui.collectionEdit.text()
+        self.db = self.client[database]
+        self.collection = self.db[collection]
+        for x in self.collection.find():
+            print(x)
+        print(self.collection.count_documents({}))
+        self.ui.outputEdit.setText(str(self.collection.count_documents({})))
