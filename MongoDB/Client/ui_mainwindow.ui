@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>MongoDB Client</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../Icon/mongo.png</normaloff>../../Icon/mongo.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="database_name">
     <property name="geometry">

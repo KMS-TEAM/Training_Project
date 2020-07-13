@@ -20,3 +20,15 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        self.setupMongodb()
+        self.ui.countButton.clicked.connect(self.count)
+
+    def setupMongodb(self):
+        self.client = MongoClient('localhost', 27017)
+
+    @Slot()
+    def count(self):
+        self.db = self.client[self.ui.database_name.text()]
+        self.collection = self.db[self.ui.collection_name.text()]
+        print(self.collection.count())
+        self.ui.outputEdit.setText(str(self.collection.count()))
