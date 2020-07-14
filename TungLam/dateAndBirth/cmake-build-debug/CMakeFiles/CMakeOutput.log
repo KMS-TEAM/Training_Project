@@ -1,0 +1,97 @@
+The system is: Windows - 10.0.17763 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: F:/VisualStudio/VC/Tools/MSVC/14.25.28610/bin/Hostx86/x86/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) C/C++ Optimizing Compiler Version 19.25.28614 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+CMakeCCompilerId.c
+Microsoft (R) Incremental Linker Version 14.25.28614.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCCompilerId.exe 
+CMakeCCompilerId.obj 
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
+
+The C compiler identification is MSVC, found in "E:/Git/o_team_project/TungLam/dateAndBirth/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/CMakeCCompilerId.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: F:/VisualStudio/VC/Tools/MSVC/14.25.28610/bin/Hostx86/x86/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R) C/C++ Optimizing Compiler Version 19.25.28614 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+CMakeCXXCompilerId.cpp
+Microsoft (R) Incremental Linker Version 14.25.28614.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCXXCompilerId.exe 
+CMakeCXXCompilerId.obj 
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
+
+The CXX compiler identification is MSVC, found in "E:/Git/o_team_project/TungLam/dateAndBirth/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdCXX/CMakeCXXCompilerId.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: E:/Git/o_team_project/TungLam/dateAndBirth/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_6f663\fast && 	F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86\nmake.exe -f CMakeFiles\cmTC_6f663.dir\build.make /nologo -L                  CMakeFiles\cmTC_6f663.dir\build
+Building C object CMakeFiles/cmTC_6f663.dir/testCCompiler.c.obj
+	F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\Hostx86\x86\cl.exe @C:\Users\Life\AppData\Local\Temp\nmFE33.tmp
+testCCompiler.c
+Linking C executable cmTC_6f663.exe
+	C:\Users\Life\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_6f663.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_6f663.dir\objects1.rsp @C:\Users\Life\AppData\Local\Temp\nm856.tmp
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: E:/Git/o_team_project/TungLam/dateAndBirth/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_d8ba9\fast && 	F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86\nmake.exe -f CMakeFiles\cmTC_d8ba9.dir\build.make /nologo -L                  CMakeFiles\cmTC_d8ba9.dir\build
+Building C object CMakeFiles/cmTC_d8ba9.dir/CMakeCCompilerABI.c.obj
+	F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\Hostx86\x86\cl.exe @C:\Users\Life\AppData\Local\Temp\nm2E1D.tmp
+CMakeCCompilerABI.c
+Linking C executable cmTC_d8ba9.exe
+	C:\Users\Life\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_d8ba9.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_d8ba9.dir\objects1.rsp @C:\Users\Life\AppData\Local\Temp\nm2F95.tmp
+
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: E:/Git/o_team_project/TungLam/dateAndBirth/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_45a42\fast && 	F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86\nmake.exe -f CMakeFiles\cmTC_45a42.dir\build.make /nologo -L                  CMakeFiles\cmTC_45a42.dir\build
+Building CXX object CMakeFiles/cmTC_45a42.dir/testCXXCompiler.cxx.obj
+	F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\Hostx86\x86\cl.exe @C:\Users\Life\AppData\Local\Temp\nm3BE8.tmp
+testCXXCompiler.cxx
+Linking CXX executable cmTC_45a42.exe
+	C:\Users\Life\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_45a42.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_45a42.dir\objects1.rsp @C:\Users\Life\AppData\Local\Temp\nm3CF3.tmp
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: E:/Git/o_team_project/TungLam/dateAndBirth/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_81077\fast && 	F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\HostX86\x86\nmake.exe -f CMakeFiles\cmTC_81077.dir\build.make /nologo -L                  CMakeFiles\cmTC_81077.dir\build
+Building CXX object CMakeFiles/cmTC_81077.dir/CMakeCXXCompilerABI.cpp.obj
+	F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\Hostx86\x86\cl.exe @C:\Users\Life\AppData\Local\Temp\nm4658.tmp
+CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_81077.exe
+	C:\Users\Life\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_81077.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- F:\VisualStudio\VC\Tools\MSVC\14.25.28610\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_81077.dir\objects1.rsp @C:\Users\Life\AppData\Local\Temp\nm47A1.tmp
+
+
+
