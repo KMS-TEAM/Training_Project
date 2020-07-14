@@ -19,15 +19,16 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.setupMongodb()
 
         self.ui.countButton.clicked.connect(self.count)
+        self.ui.insertButton.clicked.connect(self.insert)
 
     def setupMongodb(self):
         self.client = MongoClient('localhost', 27017)
 
     @Slot()
     def count(self):
-        self.setupMongodb()
         database = self.ui.databaseEdit.text()
         collection = self.ui.collectionEdit.text()
         self.db = self.client[database]
@@ -36,3 +37,19 @@ class MainWindow(QMainWindow):
             print(x)
         print(self.collection.count_documents({}))
         self.ui.outputEdit.setText(str(self.collection.count_documents({})))
+
+    @Slot()
+    def insert(self):
+        database = self.ui.databaseEdit.text()
+        collection = self.ui.collectionEdit.text()
+        self.db = self.client[database]
+        self.collection = self.db[collection]
+        timeNow = datetime.datetime.now()
+        data = {
+            "Humidity" : int(self.ui.humidityEdit.text()),
+            "Temperature" : int(self.ui.temperatureEdit.text()),
+            "Date" : str(timeNow.date()),
+            "Hour" : str(timeNow.hour),
+            "Minute" : str(timeNow.minute),
+        }
+        self.collection.insert_one(data)
