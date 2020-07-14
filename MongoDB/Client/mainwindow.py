@@ -6,6 +6,7 @@ from PyQt5.QtGui import QIcon
 from mplcanvas import MplCanvs
 
 from PyQt5.QtWidgets import (QApplication, QLabel, QPushButton, QMainWindow, QSizePolicy)
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import pyqtSignal as Signal, pyqtSlot as Slot
 
 import pymongo
@@ -20,6 +21,8 @@ class MainWindow(QMainWindow):
 
         self.setupMongodb()
         self.setupDataDisplay()
+        pixMap = QPixmap("icon.jpg")
+        self.ui.picture.setPixmap(pixMap)
 
         self.ui.countButton.clicked.connect(self.count)
         self.ui.insertButton.clicked.connect(self.insert)
@@ -31,13 +34,13 @@ class MainWindow(QMainWindow):
     def setupDataDisplay(self):
         self.dataDisplay = MplCanvs(self.ui.dataDisplay, width=8.0, height=1.6, dpi=100)
 
-    def displayDatat(self):
-        data = {
-            "Humidity": int(self.ui.humidityEdit.text()),
-            "Temperature": int(self.ui.temperatureEdit.text())
+    def displayData(self, data):
+        data_ = {
+            "Humidity": data['Humidity'],
+            "Temperature": data['Temperature']
         }
-        data = json.dumps(data)
-        payload = json.loads(data)
+        data_ = json.dumps(data_)
+        payload = json.loads(data_)
         self.dataDisplay.updateData(payload)
 
     @Slot()
@@ -81,7 +84,8 @@ class MainWindow(QMainWindow):
         }
 
         mydoc = self.collection.find(myquery)
-        for x in mydoc:
-            print(x)
+        for data in mydoc:
+            print(data)
+            self.displayData(data)
         self.ui.outputEdit.setText(str(mydoc.count()))
 

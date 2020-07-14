@@ -108,7 +108,7 @@
    <widget class="QPushButton" name="countButton">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>500</x>
       <y>70</y>
       <width>91</width>
       <height>41</height>
@@ -140,7 +140,7 @@
    <widget class="QPushButton" name="insertButton">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>500</x>
       <y>120</y>
       <width>91</width>
       <height>41</height>
@@ -250,7 +250,7 @@
    <widget class="QPushButton" name="queryButton">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>500</x>
       <y>220</y>
       <width>91</width>
       <height>51</height>
@@ -288,6 +288,19 @@
       </rect>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="picture">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>10</y>
+      <width>171</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
