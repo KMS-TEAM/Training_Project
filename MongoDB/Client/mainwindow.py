@@ -69,7 +69,6 @@ class MainWindow(QMainWindow):
             "Minute" : str(timeNow.minute),
         }
         self.collection.insert_one(data)
-        self.displayDatat()
 
     @Slot()
     def query(self):
@@ -82,6 +81,7 @@ class MainWindow(QMainWindow):
             "Date": self.ui.dateInput.text(),
             "Hour": self.ui.timeInput.text()
         }
+
         mydoc = self.collection.find(myquery)
         for data in mydoc:
             print(data)
