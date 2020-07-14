@@ -21,18 +21,24 @@ class MainWindow(QMainWindow):
 
         self.setupMongodb()
         self.setupDataDisplay()
+        self.setupTestGui()
         pixMap = QPixmap("icon.jpg")
         self.ui.picture.setPixmap(pixMap)
 
         self.ui.countButton.clicked.connect(self.count)
         self.ui.insertButton.clicked.connect(self.insert)
-        self.ui.queryButton.clicked.connect(self.query)
+        self.ui.queryButton.clicked.connect(self.queryByDate)
 
     def setupMongodb(self):
         self.client = MongoClient('localhost', 27017)
 
     def setupDataDisplay(self):
         self.dataDisplay = MplCanvs(self.ui.dataDisplay, width=8.0, height=1.6, dpi=100)
+
+    def setupTestGui(self):
+        self.ui.databaseEdit.setText("mydatabase")
+        self.ui.collectionEdit.setText("test")
+        self.ui.dateInput.setText("2020-07-14")
 
     def displayData(self, data):
         data_ = {
@@ -41,6 +47,7 @@ class MainWindow(QMainWindow):
         }
         data_ = json.dumps(data_)
         payload = json.loads(data_)
+        print(data)
         self.dataDisplay.updateData(payload)
 
     @Slot()
@@ -87,4 +94,37 @@ class MainWindow(QMainWindow):
             print(data)
             self.displayData(data)
         self.ui.outputEdit.setText(str(mydoc.count()))
+
+    @Slot()
+    def queryByDate(self):
+        database = self.ui.databaseEdit.text()
+        collection = self.ui.collectionEdit.text()
+        self.db = self.client[database]
+        self.collection = self.db[collection]
+
+        for i in range(0, 24):
+            myquery = {
+                "Date": self.ui.dateInput.text(),
+                "Hour" : str(i)
+            }
+            print(myquery)
+            mydoc = self.collection.find(myquery)
+            humidity = 0
+            temperature = 0
+            if mydoc.count() != 0:
+                for data in mydoc:
+                    print(data)
+                    humidity = humidity + data['Humidity']
+                    temperature = temperature + data['Temperature']
+
+                newdata = {
+                    "Humidity" : humidity/mydoc.count(),
+                    "Temperature" : temperature/mydoc.count()
+                }
+                newdata = json.dumps(newdata)
+                payload = json.loads(newdata)
+                self.displayData(payload)
+
+        self.ui.outputEdit.setText(str(self.collection.count_documents({})))
+        print('\n')
 
