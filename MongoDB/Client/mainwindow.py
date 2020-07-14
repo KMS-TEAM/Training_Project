@@ -1,25 +1,25 @@
 import sys
 import datetime
 
-from PyQt5 import QtCore, QtGui, QtWidgets
 from ui_mainwindow import Ui_MainWindow
 from PyQt5.QtGui import QIcon
+from mplcanvas import MplCanvs
 
-import PyQt5
 from PyQt5.QtWidgets import (QApplication, QLabel, QPushButton, QMainWindow, QSizePolicy)
-from PyQt5.QtCore import Qt, QTimer
-from PyQt5.QtGui import *
 from PyQt5.QtCore import pyqtSignal as Signal, pyqtSlot as Slot
 
 import pymongo
 from pymongo import MongoClient
+import json
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
         self.setupMongodb()
+        self.setupDataDisplay()
 
         self.ui.countButton.clicked.connect(self.count)
         self.ui.insertButton.clicked.connect(self.insert)
@@ -27,6 +27,18 @@ class MainWindow(QMainWindow):
 
     def setupMongodb(self):
         self.client = MongoClient('localhost', 27017)
+
+    def setupDataDisplay(self):
+        self.dataDisplay = MplCanvs(self.ui.dataDisplay, width=8.0, height=1.6, dpi=100)
+
+    def displayDatat(self):
+        data = {
+            "Humidity": int(self.ui.humidityEdit.text()),
+            "Temperature": int(self.ui.temperatureEdit.text())
+        }
+        data = json.dumps(data)
+        payload = json.loads(data)
+        self.dataDisplay.updateData(payload)
 
     @Slot()
     def count(self):
@@ -54,6 +66,7 @@ class MainWindow(QMainWindow):
             "Minute" : str(timeNow.minute),
         }
         self.collection.insert_one(data)
+        self.displayDatat()
 
     @Slot()
     def query(self):

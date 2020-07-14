@@ -22,8 +22,8 @@ class MplCanvs(FigureCanvas):
         self.axes.plot(self.xdata, self.ydata, 'r')
 
     def updateData(self, newData={'Humidity': 0, 'Temperature': 0}):
-        newTemp = newData['t']
-        newHumidity = newData['h']
+        newTemp = newData['Humidity']
+        newHumidity = newData['Temperature']
 
         self.ydata = self.ydata[1:] + [newTemp]
         self.hdata = self.hdata[1:] + [newHumidity]
