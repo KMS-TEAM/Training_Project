@@ -23,6 +23,7 @@ class MainWindow(QMainWindow):
 
         self.ui.countButton.clicked.connect(self.count)
         self.ui.insertButton.clicked.connect(self.insert)
+        self.ui.queryButton.clicked.connect(self.query)
 
     def setupMongodb(self):
         self.client = MongoClient('localhost', 27017)
@@ -53,3 +54,21 @@ class MainWindow(QMainWindow):
             "Minute" : str(timeNow.minute),
         }
         self.collection.insert_one(data)
+
+    @Slot()
+    def query(self):
+        database = self.ui.databaseEdit.text()
+        collection = self.ui.collectionEdit.text()
+        self.db = self.client[database]
+        self.collection = self.db[collection]
+
+        myquery = {
+            "Date": self.ui.dateInput.text(),
+            "Hour": self.ui.timeInput.text()
+        }
+
+        mydoc = self.collection.find(myquery)
+        for x in mydoc:
+            print(x)
+        self.ui.outputEdit.setText(str(mydoc.count()))
+
