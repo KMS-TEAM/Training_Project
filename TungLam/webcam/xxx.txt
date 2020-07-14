@@ -1,0 +1,3 @@
+use CLion and CMake create CMake project:
+- use OpenCV
+- take a photo by your webcam
