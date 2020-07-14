@@ -82,7 +82,6 @@ class MainWindow(QMainWindow):
             "Date": self.ui.dateInput.text(),
             "Hour": self.ui.timeInput.text()
         }
-
         mydoc = self.collection.find(myquery)
         for data in mydoc:
             print(data)
