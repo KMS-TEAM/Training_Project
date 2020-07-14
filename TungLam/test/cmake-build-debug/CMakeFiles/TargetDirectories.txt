@@ -1,0 +1,3 @@
+C:/Users/NguyenTungLam/Documents/Git/o_team_project/TungLam/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/NguyenTungLam/Documents/Git/o_team_project/TungLam/test/cmake-build-debug/CMakeFiles/test.dir
+C:/Users/NguyenTungLam/Documents/Git/o_team_project/TungLam/test/cmake-build-debug/CMakeFiles/edit_cache.dir
