@@ -51,6 +51,7 @@ int SoNgayTruocThang(int Nam, int Thang)
 
 int TongSoNgay(int Nam, int Thang, int Ngay)
 {
+    std::cout << "Tong so ngay: " << SoNgayTruocNam(Nam) + SoNgayTruocThang(Nam, Thang) + Ngay << std::endl;
     return SoNgayTruocNam(Nam) + SoNgayTruocThang(Nam, Thang) + Ngay;
 }
 
@@ -66,10 +67,13 @@ string NgayTrongTuan(int Nam, int Thang, int Ngay)
         case 5: return "Thu sau";
         default: return "Thu bay";
     }
+
 }
 int main ()
 {
     int Ngay, Thang, Nam;
     cin >> Ngay >> Thang >> Nam;
-    NgayTrongTuan( Nam,  Thang,  Ngay);
+    std::string result = NgayTrongTuan( Nam,  Thang,  Ngay);
+    std::cout << result << std::endl;
+    return 0;
 }
