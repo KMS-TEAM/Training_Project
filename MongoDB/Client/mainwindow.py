@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
         self.setupMongodb()
         self.setupDataDisplay()
         self.setupTestGui()
-        pixMap = QPixmap("icon.jpg")
+        pixMap = QPixmap("newison.jpg")
         self.ui.picture.setPixmap(pixMap)
 
         self.ui.countButton.clicked.connect(self.count)
