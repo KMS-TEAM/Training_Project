@@ -5,7 +5,7 @@ class MplCanvs(FigureCanvas):
     def __init__(self, parent=None, width=5, height=4, dpi=100, n_data = 20):
         fig = Figure(figsize=(width, height), dpi=dpi)
         self.axes = fig.add_subplot(111)
-        self.axes.get_xaxis().set_visible(False)
+        self.axes.get_xaxis().set_visible(True)
 
         self.compute_initial_figure()
 
@@ -30,14 +30,15 @@ class MplCanvs(FigureCanvas):
 
         self.axes.cla()  # Clear the canvas.
         self.drawStyle()
-        self.axes.plot(self.xdata, self.ydata, 'r')
-        self.axes.plot(self.xdata, self.hdata, 'b')
+        self.axes.plot(self.xdata, self.ydata, 'ro')
+        self.axes.plot(self.xdata, self.hdata, 'bo')
         # Trigger the canvas to update and redraw.
         self.draw()
 
     def drawStyle(self):
         self.axes.grid(True)
         self.axes.set_ylim(ymin=0, ymax=100)
+        self.axes.set_xlim(xmin=0, xmax=24)
 
     def compute_initial_figure(self):
         pass
