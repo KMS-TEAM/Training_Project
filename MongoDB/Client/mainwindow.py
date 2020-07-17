@@ -37,7 +37,7 @@ class MainWindow(QMainWindow):
 
     def setupTestGui(self):
         self.ui.databaseEdit.setText("mydatabase")
-        self.ui.collectionEdit.setText("test")
+        self.ui.collectionEdit.setText("WeatherStation")
         self.ui.dateInput.setText("2020-07-14")
 
     def displayData(self, data):
@@ -105,7 +105,8 @@ class MainWindow(QMainWindow):
         for i in range(0, 24):
             myquery = {
                 "Date": self.ui.dateInput.text(),
-                "Hour" : str(i)
+                "Hour": str(i)
+
             }
             print(myquery)
             mydoc = self.collection.find(myquery)
