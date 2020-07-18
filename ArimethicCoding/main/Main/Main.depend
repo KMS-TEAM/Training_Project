@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1544325792 source:c:\users\lifezero\desktop\main\main\arithmeticcoderc.cpp
+	"ArithmeticCoderC.h"
+	"tools.h"
+	<iostream>
+
+1544280291 c:\users\lifezero\desktop\main\main\arithmeticcoderc.h
+	<fstream>
+
+1544280291 c:\users\lifezero\desktop\main\main\tools.h
+
