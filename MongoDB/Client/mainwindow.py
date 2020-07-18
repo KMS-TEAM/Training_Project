@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
         self.setupMongodb()
         self.setupDataDisplay()
         self.setupTestGui()
-        pixMap = QPixmap("icon.jpg")
+        pixMap = QPixmap("newison.jpg")
         self.ui.picture.setPixmap(pixMap)
 
         self.ui.countButton.clicked.connect(self.count)
@@ -33,12 +33,12 @@ class MainWindow(QMainWindow):
         self.client = MongoClient('localhost', 27017)
 
     def setupDataDisplay(self):
-        self.dataDisplay = MplCanvs(self.ui.dataDisplay, width=8.0, height=1.6, dpi=100)
+        self.dataDisplay = MplCanvs(self.ui.dataDisplay, width=7.0, height=2.2, dpi=100)
 
     def setupTestGui(self):
         self.ui.databaseEdit.setText("mydatabase")
-        self.ui.collectionEdit.setText("test")
-        self.ui.dateInput.setText("2020-07-14")
+        self.ui.collectionEdit.setText("testGui")
+        self.ui.dateInput.setText("2020-07-17")
 
     def displayData(self, data):
         data_ = {
@@ -105,7 +105,8 @@ class MainWindow(QMainWindow):
         for i in range(0, 24):
             myquery = {
                 "Date": self.ui.dateInput.text(),
-                "Hour" : str(i)
+                "Hour": str(i)
+
             }
             print(myquery)
             mydoc = self.collection.find(myquery)

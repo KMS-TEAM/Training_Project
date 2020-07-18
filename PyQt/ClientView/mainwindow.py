@@ -48,7 +48,7 @@ class MainWindow(QMainWindow):
         self.client = MongoClient('localhost', 27017)
 
         self.db = self.client["mydatabase"]
-        self.collection = self.db["WeatherStation"]
+        self.collection = self.db["testGui"]
         for x in self.collection.find():
            print(x)
 
@@ -58,6 +58,7 @@ class MainWindow(QMainWindow):
 #        print(self.data)
         self.ui.message.setText("Message : " + str(self.data))
         self.convertdata()
+#        timeNow = datetime.datetime.now()
         data = {
            "WindDirection" : self.windDirection,
            "WindSpeedAverage" : self.windSpeedAverage,
@@ -67,7 +68,9 @@ class MainWindow(QMainWindow):
             "RainfallOneDay" : self.rainFallOneDay,
             "Humidity" : self.humidity,
             "BarPressure" : self.barPressure,
-            "Time" : datetime.datetime.now()
+            "Date": str(datetime.datetime.now().date()),
+            "Hour": str(datetime.datetime.now().hour),
+            "Minute": str(datetime.datetime.now().minute)
         }
         print(data)
         self.result = self.collection.insert_one(data)
