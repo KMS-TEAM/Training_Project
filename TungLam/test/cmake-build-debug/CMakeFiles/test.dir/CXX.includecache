@@ -7,8 +7,10 @@
 #IncludeRegexTransform: 
 
 C:/Users/NguyenTungLam/Documents/Git/o_team_project/TungLam/test/main.cpp
-iostream
--
-string
+cv.h
+C:/Users/NguyenTungLam/Documents/Git/o_team_project/TungLam/test/cv.h
+highgui.h
+C:/Users/NguyenTungLam/Documents/Git/o_team_project/TungLam/test/highgui.h
+stdio.h
 -
 

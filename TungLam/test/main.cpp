@@ -1,80 +1,40 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include "cv.h"
+#include "highgui.h"
+#include <stdio.h>
 
-bool LaNamNhuan(int Nam)
-{
-    if (((Nam % 4 == 0) && (Nam % 100 != 0)) ||   (Nam % 400 == 0))
-        return true;
-    else return false;
-}
+// A Simple Camera Capture Framework
+int main() {
+    CvCapture* capture = cvCaptureFromCAM( CV_CAP_ANY );
+    if ( !capture ) {
+        fprintf( stderr, "ERROR: capture is NULL \n" );
+        getchar();
+        return -1;
+    }
 
-int SoNgayTrongNam(int Nam)
-{
-    if (LaNamNhuan(Nam)) return 366;
-    else
-        return (365);
-}
+    // Create a window in which the captured images will be presented
+    cvNamedWindow( "mywindow", CV_WINDOW_AUTOSIZE );
 
-int SoNgayTruocNam(int Nam)
-{
-    int TongSoNgayTruoc = 0;
-    for (int i = 1; i < Nam; i += 1)
-        TongSoNgayTruoc += SoNgayTrongNam(i);
-    return TongSoNgayTruoc;
-}
+    // Show the image captured from the camera in the window and repeat
+    while ( 1 ) {
+        // Get one frame
+        IplImage* frame = cvQueryFrame( capture );
 
-int SoNgayTrongThang(int Nam, int Thang)
-{
-    switch (Thang)
-    {
-        case 4:
-        case 6:
-        case 9:
-        case 11: return 30;
-        case 2:
-        {
-            if (LaNamNhuan(Nam)) return 29;
-            return 28;
+        if ( !frame ) {
+            fprintf( stderr, "ERROR: frame is null...\n" );
+            getchar();
+            break;
         }
-        default: return 31;
-    }
-}
 
-int SoNgayTruocThang(int Nam, int Thang)
-{
-    int SoNgay=0;
-    for (int i = 1; i < Thang; i += 1)
-        SoNgay += SoNgayTrongThang(Nam, i);
-    return SoNgay;
-}
+        cvShowImage( "mywindow", frame );
 
-int TongSoNgay(int Nam, int Thang, int Ngay)
-{
-    std::cout << "Tong so ngay: " << SoNgayTruocNam(Nam) + SoNgayTruocThang(Nam, Thang) + Ngay << std::endl;
-    return SoNgayTruocNam(Nam) + SoNgayTruocThang(Nam, Thang) + Ngay;
-}
-
-string NgayTrongTuan(int Nam, int Thang, int Ngay)
-{
-    switch (TongSoNgay(Nam,Thang,Ngay)%7)
-    {
-        case 0: return "Chu nhat";
-        case 1: return "Thu hai";
-        case 2: return "Thu ba";
-        case 3: return "Thu tu";
-        case 4: return "Thu nam";
-        case 5: return "Thu sau";
-        default: return "Thu bay";
+        // Do not release the frame!
+        // If ESC key pressed, Key=0x10001B under OpenCV 0.9.7(linux version),
+        // remove higher bits using AND operator
+        if ( (cvWaitKey(10) & 255) == 27 ) break;
     }
 
-}
-int main ()
-{
-    int Ngay, Thang, Nam;
-    cin >> Ngay >> Thang >> Nam;
-    std::string result = NgayTrongTuan( Nam,  Thang,  Ngay);
-    std::cout << result << std::endl;
+    // Release the capture device housekeeping
+    cvReleaseCapture( &capture );
+    cvDestroyWindow( "mywindow" );
     return 0;
 }
-
