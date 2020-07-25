@@ -1,3 +1,0 @@
-/home/lacie/CLionProjects/Manipulator_ver1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/lacie/CLionProjects/Manipulator_ver1/cmake-build-debug/CMakeFiles/manipulator.dir
-/home/lacie/CLionProjects/Manipulator_ver1/cmake-build-debug/CMakeFiles/edit_cache.dir

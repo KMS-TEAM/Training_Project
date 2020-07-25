@@ -1,3 +1,0 @@
-/home/lacie/CLionProjects/Script/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/lacie/CLionProjects/Script/cmake-build-debug/CMakeFiles/Script.dir
-/home/lacie/CLionProjects/Script/cmake-build-debug/CMakeFiles/edit_cache.dir
