@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Github/o_team_project/TungLam/Calculator/include/calculatorlib/maincc.h
+iostream
+-
+
+D:/Github/o_team_project/TungLam/Calculator/src/calculatorlib/maincc.cpp
+../../include/calculatorlib/maincc.h
+D:/Github/o_team_project/TungLam/Calculator/include/calculatorlib/maincc.h
+

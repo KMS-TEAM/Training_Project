@@ -1,0 +1,4 @@
+D:/Github/o_team_project/TungLam/Calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Github/o_team_project/TungLam/Calculator/cmake-build-debug/CMakeFiles/calculator.dir
+D:/Github/o_team_project/TungLam/Calculator/cmake-build-debug/CMakeFiles/CalculatorApp.dir
+D:/Github/o_team_project/TungLam/Calculator/cmake-build-debug/CMakeFiles/edit_cache.dir
