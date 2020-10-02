@@ -78,12 +78,12 @@ clean: CMakeFiles\FPT.dir\clean
 CMakeFiles\FPT.dir\all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FPT.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\FPT.dir\depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FPT.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\FPT.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Github\o_team_project\FPT\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target FPT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Github\o_team_project\FPT\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target FPT"
 .PHONY : CMakeFiles\FPT.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\FPT.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Github\o_team_project\FPT\cmake-build-debug\CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Github\o_team_project\FPT\cmake-build-debug\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\FPT.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Github\o_team_project\FPT\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles\FPT.dir\rule

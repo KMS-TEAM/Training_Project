@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/FPT.dir/fptEmployeer.cpp.obj"
   "CMakeFiles/FPT.dir/fptFresher.cpp.obj"
+  "CMakeFiles/FPT.dir/fptSocialNetwork.cpp.obj"
   "CMakeFiles/FPT.dir/fptUsers.cpp.obj"
   "CMakeFiles/FPT.dir/main.cpp.obj"
   "FPT.exe"

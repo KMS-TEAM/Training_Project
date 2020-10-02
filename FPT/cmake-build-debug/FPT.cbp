@@ -94,6 +94,12 @@
 		<Unit filename="D:/Github/o_team_project/FPT/fptFresher.h">
 			<Option target="FPT"/>
 		</Unit>
+		<Unit filename="D:/Github/o_team_project/FPT/fptSocialNetwork.cpp">
+			<Option target="FPT"/>
+		</Unit>
+		<Unit filename="D:/Github/o_team_project/FPT/fptSocialNetwork.h">
+			<Option target="FPT"/>
+		</Unit>
 		<Unit filename="D:/Github/o_team_project/FPT/fptUsers.cpp">
 			<Option target="FPT"/>
 		</Unit>

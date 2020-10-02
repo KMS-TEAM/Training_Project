@@ -181,6 +181,33 @@ fptFresher.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FPT.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\FPT.dir\fptFresher.cpp.s
 .PHONY : fptFresher.cpp.s
 
+fptSocialNetwork.obj: fptSocialNetwork.cpp.obj
+
+.PHONY : fptSocialNetwork.obj
+
+# target to build an object file
+fptSocialNetwork.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FPT.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\FPT.dir\fptSocialNetwork.cpp.obj
+.PHONY : fptSocialNetwork.cpp.obj
+
+fptSocialNetwork.i: fptSocialNetwork.cpp.i
+
+.PHONY : fptSocialNetwork.i
+
+# target to preprocess a source file
+fptSocialNetwork.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FPT.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\FPT.dir\fptSocialNetwork.cpp.i
+.PHONY : fptSocialNetwork.cpp.i
+
+fptSocialNetwork.s: fptSocialNetwork.cpp.s
+
+.PHONY : fptSocialNetwork.s
+
+# target to generate assembly for a file
+fptSocialNetwork.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\FPT.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\FPT.dir\fptSocialNetwork.cpp.s
+.PHONY : fptSocialNetwork.cpp.s
+
 fptUsers.obj: fptUsers.cpp.obj
 
 .PHONY : fptUsers.obj
@@ -250,6 +277,9 @@ help:
 	@echo ... fptFresher.obj
 	@echo ... fptFresher.i
 	@echo ... fptFresher.s
+	@echo ... fptSocialNetwork.obj
+	@echo ... fptSocialNetwork.i
+	@echo ... fptSocialNetwork.s
 	@echo ... fptUsers.obj
 	@echo ... fptUsers.i
 	@echo ... fptUsers.s

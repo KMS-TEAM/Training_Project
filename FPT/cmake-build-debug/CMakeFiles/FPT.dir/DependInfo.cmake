@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Github/o_team_project/FPT/fptEmployeer.cpp" "D:/Github/o_team_project/FPT/cmake-build-debug/CMakeFiles/FPT.dir/fptEmployeer.cpp.obj"
   "D:/Github/o_team_project/FPT/fptFresher.cpp" "D:/Github/o_team_project/FPT/cmake-build-debug/CMakeFiles/FPT.dir/fptFresher.cpp.obj"
+  "D:/Github/o_team_project/FPT/fptSocialNetwork.cpp" "D:/Github/o_team_project/FPT/cmake-build-debug/CMakeFiles/FPT.dir/fptSocialNetwork.cpp.obj"
   "D:/Github/o_team_project/FPT/fptUsers.cpp" "D:/Github/o_team_project/FPT/cmake-build-debug/CMakeFiles/FPT.dir/fptUsers.cpp.obj"
   "D:/Github/o_team_project/FPT/main.cpp" "D:/Github/o_team_project/FPT/cmake-build-debug/CMakeFiles/FPT.dir/main.cpp.obj"
   )
