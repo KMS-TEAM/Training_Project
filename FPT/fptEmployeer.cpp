@@ -5,10 +5,9 @@
 #include "fptEmployeer.h"
 
 // Constructor 
-fptEmployeer::fptEmployeer(unsigned int id, unsigned int position1, unsigned int age1, string hobbits1,
-                           string name1, unsigned int *listFriends1, unsigned int Id, unsigned int position,
+fptEmployeer::fptEmployeer(unsigned int Id, unsigned int position,
                            unsigned int age, string hobbits, string name, unsigned int *listFriends,
-                           string department) : fptUsers(id, position1, age1, hobbits1, name1, listFriends1) {
+                           string department) : fptUsers(Id, position, age, hobbits, name, listFriends) {
     _Id = Id;
     _position = position;
     _age = age;
@@ -18,7 +17,7 @@ fptEmployeer::fptEmployeer(unsigned int id, unsigned int position1, unsigned int
 }
 
 // Destructor
-fptEmployeer::~fptEmployeer()= default;
+fptEmployeer::~fptEmployeer()=default;
 
 // Return Fresher class name
 string fptEmployeer::getDepartment(){

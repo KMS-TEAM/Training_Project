@@ -10,8 +10,7 @@
 class fptFresher : public fptUsers{
     public:
         // Constructor
-        fptFresher(unsigned int id, unsigned int position1, unsigned int age1, string hobbits1, string name1,
-                   unsigned int *listFriends1, unsigned int Id, unsigned int position, unsigned int age,
+        fptFresher(unsigned int id, unsigned int position, unsigned int age,
                    string hobbits, string name, unsigned int *listFriends, string className);
         // Trivial Destructor
         ~fptFresher();

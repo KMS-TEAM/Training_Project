@@ -14,7 +14,7 @@ fptUsers::fptUsers(unsigned int Id, unsigned int position, unsigned int age, str
 }
 
 // Destructor
-fptUsers::~fptUsers()= default;
+fptUsers::~fptUsers()=default;
 
 // Return User Id
 unsigned int fptUsers::getId(){

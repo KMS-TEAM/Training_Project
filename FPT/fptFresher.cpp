@@ -5,9 +5,8 @@
 #include "fptFresher.h"
 
 // Constructor 
-fptFresher::fptFresher(unsigned int id, unsigned int position1, unsigned int age1, string hobbits1, string name1,
-                       unsigned int *listFriends1, unsigned int Id, unsigned int position, unsigned int age,
-                       string hobbits, string name, unsigned int *listFriends, string className) : fptUsers(id, position1, age1, hobbits1, name1, listFriends1) {
+fptFresher::fptFresher(unsigned int Id, unsigned int position, unsigned int age,
+                       string hobbits, string name, unsigned int *listFriends, string className) : fptUsers(Id, position, age, hobbits, name, listFriends) {
     _Id = Id;
     _position = position;
     _age = age;
@@ -17,7 +16,7 @@ fptFresher::fptFresher(unsigned int id, unsigned int position1, unsigned int age
 }
 
 // Destructor
-fptFresher::~fptFresher()= default;
+fptFresher::~fptFresher()=default;
 
 // Return Fresher class name
 string fptFresher::getClassName(){
