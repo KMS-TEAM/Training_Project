@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Github/o_team_project/FPT/fptEmployeer.cpp
+fptEmployeer.h
+D:/Github/o_team_project/FPT/fptEmployeer.h
+
+D:/Github/o_team_project/FPT/fptEmployeer.h
+fptUsers.h
+D:/Github/o_team_project/FPT/fptUsers.h
+
+D:/Github/o_team_project/FPT/fptFresher.cpp
+fptFresher.h
+D:/Github/o_team_project/FPT/fptFresher.h
+
+D:/Github/o_team_project/FPT/fptFresher.h
+fptUsers.h
+D:/Github/o_team_project/FPT/fptUsers.h
+
+D:/Github/o_team_project/FPT/fptUsers.cpp
+fptUsers.h
+D:/Github/o_team_project/FPT/fptUsers.h
+
+D:/Github/o_team_project/FPT/fptUsers.h
+iostream
+-
+string
+-
+
